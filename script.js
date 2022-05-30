@@ -1,11 +1,11 @@
 let lista = document.querySelector('#lista');
 
-fetch("https://jsonplaceholder.typicode.com/posts")
-.then((huevo) => huevo.json())
-.then(asd => {
-    console.log(asd)
-    asd.forEach(a => {
-        lista.innerHTML += `<li> ${a.title} <br> ${a.body} </li>`
+fetch("http://127.0.0.1:5500/data.json")
+.then((response) => response.json())
+.then(data => {
+    console.log(data)
+    data.forEach(objeto => {
+        lista.innerHTML += `<li> ${objeto.nombre} <br> ${objeto.edad} </li>`
     })
 })
 
